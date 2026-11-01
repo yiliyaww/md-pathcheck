@@ -1,0 +1,17 @@
+{
+  "name": "md-pathcheck",
+  "version": "0.1.0",
+  "description": "Check local Markdown links, image paths and heading anchors without network access or dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "bin": { "md-pathcheck": "bin/md-pathcheck.mjs" },
+  "exports": "./lib/check.mjs",
+  "files": ["bin", "lib", "examples", "README.md", "README.zh-CN.md", "CHANGELOG.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test",
+    "check": "node bin/md-pathcheck.mjs --root .",
+    "prepack": "npm test && npm run check"
+  },
+  "keywords": ["markdown", "links", "documentation", "cli", "offline"]
+}
