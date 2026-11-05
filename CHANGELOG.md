@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — 2026-11-05
+
+- Check image destinations inside linked Markdown labels, including inline and reference-style badge images. An external outer link no longer hides a broken local image.
+- Preserve the inner image's source line and report each destination once.
+- Read the CLI version from package metadata so help and `--version` stay in sync and work from any current directory.
+- Add regression tests for linked images and CLI version reporting; update English and Chinese documentation.
+
 ## 0.1.0 — 2026-11-01
 
 Initial release.

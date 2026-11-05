@@ -1,7 +1,10 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs';
 import { check } from '../lib/check.mjs';
 
-const help = `md-pathcheck 0.1.0 — check local Markdown links and heading anchors
+const { version } = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+
+const help = `md-pathcheck ${version} — check local Markdown links and heading anchors
 
 Usage: node bin/md-pathcheck.mjs [options] [files or directories...]
 
@@ -28,7 +31,7 @@ async function main() {
     if (positional) { targets.push(arg); continue; }
     if (arg === '--') positional = true;
     else if (arg === '--help' || arg === '-h') { process.stdout.write(help); return; }
-    else if (arg === '--version') { process.stdout.write('0.1.0\n'); return; }
+    else if (arg === '--version') { process.stdout.write(`${version}\n`); return; }
     else if (arg === '--json') json = true;
     else if (arg === '--root') {
       if (!args[i + 1] || args[i + 1].startsWith('--')) throw new Error('--root requires a path.');

@@ -1,6 +1,6 @@
 {
   "name": "md-pathcheck",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check local Markdown links, image paths and heading anchors without network access or dependencies.",
   "type": "module",
   "license": "MIT",

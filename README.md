@@ -6,7 +6,7 @@ Catch broken local Markdown links before they reach a pull request.
 
 `md-pathcheck` is a small, offline command-line tool for documentation repositories. It checks local file links, image paths, and Markdown heading anchors without making network requests or installing dependencies.
 
-This is the initial **0.1.0** release. It implements a useful subset of Markdown rather than a complete CommonMark parser.
+The current version is **0.1.1**. It implements a useful subset of Markdown rather than a complete CommonMark parser.
 
 ## Quick start
 
@@ -79,6 +79,7 @@ Omit `targets`, or pass an empty array, to scan the entire root. Invalid inputs 
 ## Supported syntax and path rules
 
 - Inline links and images, including angle-bracket destinations and optional titles.
+- Images inside link labels, including linked badges: `[![Badge](badge.png)](guide.md)` checks both local destinations. An external outer URL does not hide a broken local image path.
 - Full, collapsed, and defined shortcut reference links. Missing full or collapsed reference definitions are reported.
 - ATX (`# Heading`) and setext headings, Unicode heading text, and duplicate heading suffixes such as `#setup-1`.
 - Percent-encoded filenames and fragments. A path query is ignored when checking the local file.
